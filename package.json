@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "analyze": "node analyze.js",
-    "format": "node format.js > transcript.txt"
+    "format": "node format.js"
   },
   "author": "",
   "license": "ISC",

@@ -2,8 +2,10 @@
 
 // Imports the Google Cloud client library
 const speech = require('@google-cloud/speech').v1p1beta1;
-
 const fs = require('fs');
+
+const name = process.argv[2]
+console.log(name);
 
 // Creates a client
 const client = new speech.SpeechClient();
@@ -26,7 +28,7 @@ const config = {
 };
 
 const audio = {
-  "uri": "gs://storage.buckwich.de/example.flac"
+  "uri": `gs://storage.buckwich.de/${name}.flac`
 };
 
 const request = {
@@ -34,19 +36,15 @@ const request = {
   audio: audio,
 };
 
+
 async function main() {
   console.log("Starting")
   const [operation] = await client.longRunningRecognize(request);
   console.log("Operation started")
-  console.log(operation)
   const [response] = await operation.promise();
   console.log("Operation finished")
-  console.log(response)
   let data = JSON.stringify(response);
-  fs.writeFileSync('raw.json', data);
-  console.log("Result start")
-  console.log(response)
-  console.log("result end")
+  fs.writeFileSync(`${name}.flac`, data);
 
 }
 main();
