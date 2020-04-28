@@ -44,7 +44,7 @@ async function main() {
   const [response] = await operation.promise();
   console.log("Operation finished")
   let data = JSON.stringify(response);
-  fs.writeFileSync(`${name}.flac`, data);
+  fs.writeFileSync(`${name}.json`, data);
 
 }
 main();

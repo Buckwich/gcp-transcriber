@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "analyze": "node analyze.js",
-    "format": "node format.js"
+    "format-otr": "node format-otr.js",
+    "format-txt": "node format-txt.js"
   },
   "author": "",
   "license": "ISC",

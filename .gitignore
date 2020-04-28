@@ -1,4 +1,4 @@
 node_modules
 raw*.json
 transcript.txt
-interview*
+*interview*
